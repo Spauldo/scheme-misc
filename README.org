@@ -1,0 +1,53 @@
+* scheme-misc
+
+  This repository contains miscellaneous bits of scheme code I have written for
+  my own use.  There is no overriding theme to the code here.
+
+  This collection will grow over time as I write things I want to keep around.
+
+  Because this is mostly one-off code I write for specific purposes, it will
+  not necessarily be pretty or well-optimized.
+
+** Contents
+
+*** baseutils.scm
+
+    This file contains functions related to converting between numerical bases
+    (such as binary -> decimal).
+
+    - ~required-digits b1 power b2~
+     
+      Calculate the number of digits in base b2 to represent a number in base b1
+      with power digits.
+     
+    - ~convert-int-between-bases b1 nstr b2~
+
+      Converts a number in base b2 to base b2.
+
+      The number must be provided as a string.  This function supports bases up
+      to base 37 (it could do higher, but we'd need to figure out what to use
+      for digits after we run out of numbers).  The return value is also a
+      string.
+
+*** print-field.scm
+
+    A script that reads lines from standard input and prints the nth
+    whitespace-delimited field.  It's basically similar to ~awk '{print $n};'~,
+    except completely inferior in every way.
+
+    This was written in response to a StackExchange question, and is really
+    only useful as an example.
+
+** Bugs
+
+   If you find a bug, open an issue or send me a pull request.  I would like
+   the code to be as bug-free as possible.
+
+   If you want a feature, go ahead and ask.  I make no promises.  It helps if
+   you send a pull request implementing the feature.
+
+** License
+
+   This code is licensed under the ISC license, which is similar to the BSD or
+   MIT licenses.  See LICENSE for details.
+
