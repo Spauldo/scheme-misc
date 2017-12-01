@@ -60,6 +60,16 @@
     This was written in response to a StackExchange question, and is really
     only useful as an example.
 
+*** vectors.scm
+
+    This is an old script by me that contains classes for angles as well as
+    2D and 3D vectors.
+
+    I'm not guaranteeing anything about this script.  I wrote it a long time
+    ago, back when I was first experimenting with GOOPS (Guile's object system)
+    and was fairly new at Scheme.  It looks useful as an example, but these
+    days I'd put it into a library and comment it.
+
 ** Bugs
 
    If you find a bug, open an issue or send me a pull request.  I would like
