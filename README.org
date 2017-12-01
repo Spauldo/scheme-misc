@@ -29,6 +29,28 @@
       for digits after we run out of numbers).  The return value is also a
       string.
 
+*** monty-hall.scm
+    
+    A script that runs simulations of the Monty Hall problem.
+
+    The script does the following:
+
+    1. Choose one door out of three that has a prize
+    2. Choose a door at random to be the player's chosen door
+    3. "Open" a door that is neither the prize nor the player's choice
+    4. Give the player the chance to change the chosen door or keep the first
+       choice.
+    
+    Thinking logically, it seems that the player changing his/her mind
+    shouldn't affect the outcome.  However, the prize has a 2/3 chance of
+    being behind the door the player didn't choose.
+
+    This script was written to satisfy my curiosity.  It can run from the
+    command line.  With no arguments, it runs 1000 trials each of the player
+    changing his/her mind and not changing his/her mind.  Given a numerical
+    argument, it will run each simulation the given number of times.  At the
+    end of the simulation, it reports the win rate for each.
+
 *** print-field.scm
 
     A script that reads lines from standard input and prints the nth
