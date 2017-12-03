@@ -38,8 +38,7 @@
      1. Choose one door out of three that has a prize
      2. Choose a door at random to be the player's chosen door
      3. "Open" a door that is neither the prize nor the player's choice
-     4. Give the player the chance to change the chosen door or keep the first
-	choice.
+     4. Give the player the chance to change the chosen door or keep the first choice.
     
      Thinking logically, it seems that the player changing his/her mind
      shouldn't affect the outcome.  However, the prize has a 2/3 chance of
@@ -54,7 +53,7 @@
 **** print-field.scm
 
      A script that reads lines from standard input and prints the nth
-     whitespace-delimited field.  It's basically similar to ~awk '{print $n};'~,
+     whitespace-delimited field.  It's basically similar to =awk '{print $n};'=,
      except completely inferior in every way.
 
      This was written in response to a StackExchange question, and is really
