@@ -10,6 +10,14 @@
 
 ** Contents
 *** Utilities
+**** ackermann.scm
+     
+     One of the few things I wrote for MIT/GNU Scheme.  Should work in Guile
+     with minimal modification.
+
+     It's a simple implementation of Ackermann's function.  I implemented the
+     original function, not the one commonly used today.
+
 **** baseutils.scm
 
      This file contains functions related to converting between numerical bases
