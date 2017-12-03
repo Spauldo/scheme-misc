@@ -9,66 +9,123 @@
   not necessarily be pretty or well-optimized.
 
 ** Contents
+*** Utilities
+**** baseutils.scm
 
-*** baseutils.scm
+     This file contains functions related to converting between numerical bases
+     (such as binary -> decimal).
 
-    This file contains functions related to converting between numerical bases
-    (such as binary -> decimal).
-
-    - ~required-digits b1 power b2~
+     - ~required-digits b1 power b2~
      
-      Calculate the number of digits in base b2 to represent a number in base b1
-      with power digits.
+       Calculate the number of digits in base b2 to represent a number in base b1
+       with power digits.
      
-    - ~convert-int-between-bases b1 nstr b2~
+     - ~convert-int-between-bases b1 nstr b2~
 
-      Converts a number in base b2 to base b2.
+       Converts a number in base b2 to base b2.
 
-      The number must be provided as a string.  This function supports bases up
-      to base 37 (it could do higher, but we'd need to figure out what to use
-      for digits after we run out of numbers).  The return value is also a
-      string.
+       The number must be provided as a string.  This function supports bases up
+       to base 37 (it could do higher, but we'd need to figure out what to use
+       for digits after we run out of numbers).  The return value is also a
+       string.
 
-*** monty-hall.scm
+**** monty-hall.scm
     
-    A script that runs simulations of the Monty Hall problem.
+     A script that runs simulations of the Monty Hall problem.
 
-    The script does the following:
+     The script does the following:
 
-    1. Choose one door out of three that has a prize
-    2. Choose a door at random to be the player's chosen door
-    3. "Open" a door that is neither the prize nor the player's choice
-    4. Give the player the chance to change the chosen door or keep the first
-       choice.
+     1. Choose one door out of three that has a prize
+     2. Choose a door at random to be the player's chosen door
+     3. "Open" a door that is neither the prize nor the player's choice
+     4. Give the player the chance to change the chosen door or keep the first
+	choice.
     
-    Thinking logically, it seems that the player changing his/her mind
-    shouldn't affect the outcome.  However, the prize has a 2/3 chance of
-    being behind the door the player didn't choose.
+     Thinking logically, it seems that the player changing his/her mind
+     shouldn't affect the outcome.  However, the prize has a 2/3 chance of
+     being behind the door the player didn't choose.
 
-    This script was written to satisfy my curiosity.  It can run from the
-    command line.  With no arguments, it runs 1000 trials each of the player
-    changing his/her mind and not changing his/her mind.  Given a numerical
-    argument, it will run each simulation the given number of times.  At the
-    end of the simulation, it reports the win rate for each.
+     This script was written to satisfy my curiosity.  It can run from the
+     command line.  With no arguments, it runs 1000 trials each of the player
+     changing his/her mind and not changing his/her mind.  Given a numerical
+     argument, it will run each simulation the given number of times.  At the
+     end of the simulation, it reports the win rate for each.
 
-*** print-field.scm
+**** print-field.scm
 
-    A script that reads lines from standard input and prints the nth
-    whitespace-delimited field.  It's basically similar to ~awk '{print $n};'~,
-    except completely inferior in every way.
+     A script that reads lines from standard input and prints the nth
+     whitespace-delimited field.  It's basically similar to ~awk '{print $n};'~,
+     except completely inferior in every way.
 
-    This was written in response to a StackExchange question, and is really
-    only useful as an example.
+     This was written in response to a StackExchange question, and is really
+     only useful as an example.
 
-*** vectors.scm
+**** vectors.scm
 
-    This is an old script by me that contains classes for angles as well as
-    2D and 3D vectors.
+     This is an old script by me that contains classes for angles as well as
+     2D and 3D vectors.
 
-    I'm not guaranteeing anything about this script.  I wrote it a long time
-    ago, back when I was first experimenting with GOOPS (Guile's object system)
-    and was fairly new at Scheme.  It looks useful as an example, but these
-    days I'd put it into a library and comment it.
+     I'm not guaranteeing anything about this script.  I wrote it a long time
+     ago, back when I was first experimenting with GOOPS (Guile's object system)
+     and was fairly new at Scheme.  It looks useful as an example, but these
+     days I'd put it into a library and comment it.
+
+*** spauldo Library
+
+    This is my personal Scheme library for Guile.  It won't work for any other
+    scheme implementation.  Some parts might not work at all - I haven't used
+    some of this for quite some time, and some parts were written but never
+    tested.
+ 
+    It's mostly mathematics-related things.  I prefer to use Scheme for all
+    mathematics work (besides heavy number crunching, for which I prefer
+    FORTRAN or C) because of its numerical tower.
+    
+    Honestly, I wouldn't put this on a public site normally.  It's not code I'm
+    proud of.  I'm only putting it on here because I'm graduating and need to
+    clean up a few years' worth of school-related crud from my home directory.
+   
+**** acceleration
+
+     A library for performing Aitken acceleration.
+
+**** algebra
+     
+     Basic algebraic formulas, such as the quadratic formula and factorials.
+
+**** constants
+
+     The constants directory contains various libraries containing constants
+     from math and science.  Some I've used, some I've merely copied from
+     Wikipedia for the sake of completeness.
+
+**** discrete
+
+     Some discrete math functions.  I wrote this before taking discrete math,
+     and haven't checked it since.  The program that used it was buggy, but I
+     don't remember if it was the library's problem or the program.
+
+**** electronics
+
+     Functions useful for electronics.  I am /not/ an electronics engineer.
+
+**** primes
+
+     Functions related to prime numbers.
+
+**** sequence
+
+     Sequence memoization.  It wasn't fully working last I messed with it.
+
+**** vector-math (and vector-math-old)
+
+     Some functions for vector math.  I need to go through these and clean
+     them up.
+
+**** vector-utils
+
+     Utility functions for the vector data structure.  No relation to
+     mathematical vectors.
 
 ** Bugs
 
