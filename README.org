@@ -99,6 +99,32 @@
 **** algebra
      
      Basic algebraic formulas, such as the quadratic formula and factorials.
+     
+     - natural?
+
+       Predicate, returns true for nonnegative integers.
+
+     - quadratic
+
+       Given three coefficients for (ax² + bx + c), calculate the values of x.
+       Returns both values in a list.
+
+     - factorial
+
+       Given n, return n!
+
+       This function is tail recursive, so it won't use a new stack frame on
+       every iteration.
+
+     - gcd
+
+       Given two integers, return their greatest common divisor.
+
+       Uses Euclid's algorithm.
+
+     - lcm
+
+       Given two integers, return their least common multiple.
 
 **** constants
 

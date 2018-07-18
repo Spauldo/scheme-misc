@@ -20,7 +20,9 @@
   :export (natural?
            quadratic
            factorial
-           fibonacci))
+           fibonacci
+	   gcd
+	   lcm))
 
 ;; Predicate for natural numbers (nonnegative integers)
 (define (natural? n)
@@ -68,3 +70,23 @@
          1)
         (else
          (fh 1 1 (- n 3)))))
+
+;; Greatest common divisor, Euclid's algorithm
+(define (gcd a b)
+  (cond ((not (and (integer? a)
+		   (integer? b)))
+	 (error "Greatest common divisor only defined for integers."))
+	((= b 0)
+	 a)
+	(#t
+	 (gcd b (euclidean-remainder a b)))))
+
+;; Least common multiple, using gcd
+(define (lcm a b)
+  (cond ((not (and (integer? a)
+		   (integer? b)))
+	 (error "Least common multiple only defined for integers."))
+	((and (= a 0) (= b 0))
+	    0)
+	(#t
+	 (* (abs a) (/ (abs b) (gcd a b))))))
