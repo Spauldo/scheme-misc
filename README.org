@@ -106,6 +106,22 @@
      from math and science.  Some I've used, some I've merely copied from
      Wikipedia for the sake of completeness.
 
+
+**** cycle
+
+     The cycle module contains functions for working with cycling iterated
+     functions.
+     
+     - cycle-detect
+
+       Given an iterated function and a starting point, find the point at which
+       the function begins to cycle and the length of the cycle.
+       
+     - seq-run
+
+       Given an iterated function, a starting point, a the number of values to
+       produce, return a list of values in the sequence.
+
 **** discrete
 
      Some discrete math functions.  I wrote this before taking discrete math,
