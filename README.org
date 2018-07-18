@@ -85,16 +85,26 @@
     tested.
  
     It's mostly mathematics-related things.  I prefer to use Scheme for all
-    mathematics work (besides heavy number crunching, for which I prefer
-    FORTRAN or C) because of its numerical tower.
+    mathematics work because of its numerical tower.  The exception is number
+    crunching, where Scheme's speed is a liability; for those cases, I use
+    FORTRAN or C.
     
     Honestly, I wouldn't put this on a public site normally.  It's not code I'm
     proud of.  I'm only putting it on here because I'm graduating and need to
     clean up a few years' worth of school-related crud from my home directory.
+    
+    Every now and again I go in here and try to clean some of this stuff up.
+    Maybe one day, it'll all work.
    
 **** acceleration
 
      A library for performing Aitken acceleration.
+     
+     This was written for me to experiment with ideas in a numerical
+     computations class (the actual code I turned in was in FORTRAN 77).
+     Thus, it's not very general.
+     
+     An example of use is included at the bottom of the module.
 
 **** algebra
      
@@ -131,7 +141,81 @@
      The constants directory contains various libraries containing constants
      from math and science.  Some I've used, some I've merely copied from
      Wikipedia for the sake of completeness.
+     
+     I hope to use most of these one day.
+     
+     - Module spauldo constants electrical-constants
+       
+       - ke
 
+	 Column's constant
+
+     - Module spauldo constants math-constants
+
+       - π
+
+	 Archimedes' constant (the ratio of a circle's circumference to its 
+	 diameter).
+
+       - φ
+
+	 The golden ratio.
+
+       - i
+
+	 The unit imaginary number.
+
+	 Be careful with this one, since i is often used as a variable.
+
+       - e
+
+	 Euler's number
+
+     - Module spauldo constants physics-constants
+
+       - c
+
+	 The speed of light in a vacuum, in meters per second.
+
+       - Na
+
+	 Avagadro's constant
+
+       - G
+
+	 The gravitational constant
+
+       - R̅(R followed by U+0305 COMBINING OVERLINE)
+
+	 Gas constant
+
+       - kB
+
+	 Boltzmann constant
+
+       - elem-charge
+
+	 Elementary charge constant (e)
+
+       - ε0
+
+	 Vacuum permittivity constant
+
+       - μ0
+
+	 Vacuum permeability constant (magnetic constant)
+
+       - h
+
+	 Planck constant
+
+       - ℏ
+
+	 Reduced Planck constant
+
+       - α
+
+	 Fine structure constant
 
 **** cycle
 
@@ -150,22 +234,122 @@
 
 **** discrete
 
-     Some discrete math functions.  I wrote this before taking discrete math,
-     and haven't checked it since.  The program that used it was buggy, but I
-     don't remember if it was the library's problem or the program.
+     This was supposed to be a library of discrete math functions.  The code
+     inside was written before I ever took a discrete math class, and I was
+     trying to generate the coordinates of the vertices for a truncated
+     icosahedron (to do a 3D rendering of a soccer ball).
+
+     The two exported functions are meant to work with the vector module (or
+     maybe the old vector module...).  The one function that actually looks
+     useful (get-all-permutations) isn't even exported.  Bah!
+
+     Needless to say, I haven't tried to run any of this in years and should
+     probably either throw it out or rewrite it in a proper, general fashion.
+     Maybe you'll find it useful for an example, but I mostly find it an
+     embarrassment.
+
+     Oh, and it never worked.  I ran short on time and used 3D software to
+     export a soccer ball that I could import into JavaScript and render.
+     Probably the hardest problem I worked on in that JavaScript class.
 
 **** electronics
 
      Functions useful for electronics.  I am /not/ an electronics engineer.
+     
+     Strangely enough, I usually forget I have this and calculate this stuff
+     in Emacs Lisp.
+
+     - voltage-divider
+
+       Takes vin (voltage connected to r1), r1, and r2 (connected to ground)
+       and gives the voltage between r1 and r2.
+
+     - ohm-i
+
+       Takes voltage and resistance and returns current.
+
+     - ohm-v
+       
+       Takes current and resistance and returns voltage.
+
+     - ohm-r
+
+       Takes voltage and current and returns resistance.
+
+     - power-vi
+
+       Takes voltage and current and returns power (in watts).
+
+     - power-ir
+
+       Takes current and resistance and returns power.
+
+     - power-vr
+
+       Takes voltage and resistance and returns power.
+
+     - cap-charge
+
+       Takes capacitance and voltage and returns charge (in Columns)
+
+     - cap-energy
+
+       Takes capacitance and voltage and returns energy (in Joules)
+
+     - series-capacitors
+
+       Takes any number of capacitances and returns the total capacitance of
+       series capacitors.
+
+     - parallel-capacitors
+
+       Takes any number of capacitances and returns the total capacitance of
+       parallel capacitors.
+
+     - series-resistors
+
+       Takes any number of resistances and returns the total resistance of
+       series resistors.
+
+     - parallel-resistors
+
+       Takes any number of resistances and returns the total resistance of
+       parallel resistors.
+       
+     The following functions have to do with RC circuits.  Remember that I'm
+     not an electrical engineer?  I don't remember how these work.
+
+     - rc-time-constant
+     - rc-charge-current
+     - rc-discharge-current
+     - rc-charge-voltage
+     - rc-discharge-voltage
+     - rc-charge-charge
+     - rc-discharge-charge
 
 **** primes
 
      Functions related to prime numbers.
+     
+     - sieve-of-sundaram
+
+       This is the prime number sieve created by S. P. Sundaram in 1934.  It
+       takes the maximum number to be considered as a prime and returns a
+       vector where all prime indexes hold the value #t and all non-prime
+       indexes hold the value #f.
+
+       It's not as well known as the sieve of Eratosthenes, but it's a bit
+       faster.
+
+     - list-primes
+
+       Takes a vector such as that returned by sieve-of-sundaram and returns
+       a list of prime numbers.
 
 **** sequence
 
      Sequence memoization.  It wasn't fully working last I messed with it.
-
+     
 **** vector-math (and vector-math-old)
 
      Some functions for vector math.  I need to go through these and clean
