@@ -1,6 +1,7 @@
 (define-module (spauldo acceleration)
   #:use-module (ice-9 format)
-  #:use-module (ice-9 optargs))
+  #:use-module (ice-9 optargs)
+  #:export (print-2d-array aitken-triangle))
 
 (define (square x)
   (* x x))

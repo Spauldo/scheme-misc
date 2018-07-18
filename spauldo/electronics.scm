@@ -1,7 +1,15 @@
 (define-module (spauldo electronics)
   #:use-module (srfi srfi-1)
   #:use-module (spauldo constants electical-constants)
-  #:export (parallel-resistors ohm-i ohm-v ohm-r))
+  #:export (voltage-divider ohm-i ohm-v ohm-r
+			    power-vi power-ir power-vr
+			    cap-charge cap-energy
+			    series-resistors parallel-resistors
+			    series-capacitors parallel-capacitors
+			    rc-time-constant
+			    rc-charge-current rc-discharge-current
+			    rc-charge-voltage rc-discharge-voltage
+			    rc-charge-charge rc-discharge-charge))
 
 ;;; --------- Exported Functions ---------
 

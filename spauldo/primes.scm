@@ -16,7 +16,8 @@
 ;;; ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 ;;; OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-(define-module (spauldo primes))
+(define-module (spauldo primes)
+  #:export (sieve-of-sundaram list-primes))
 
 ;; Lookup table for primality.  Each value in the vector is true if the index
 ;; is prime.
