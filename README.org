@@ -119,7 +119,7 @@
        
      - seq-run
 
-       Given an iterated function, a starting point, a the number of values to
+       Given an iterated function, a starting point, and the number of values to
        produce, return a list of values in the sequence.
 
 **** discrete
