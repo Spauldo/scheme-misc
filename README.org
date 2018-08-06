@@ -315,6 +315,12 @@
 
        Takes any number of resistances and returns the total resistance of
        parallel resistors.
+
+     - resistor-voltage-limit
+       
+       Takes the resistance and power rating of a resistor and returns the
+       voltage required to meet that limit (i.e. how much voltage does it take
+       to smoke this resistor).
        
      The following functions have to do with RC circuits.  Remember that I'm
      not an electrical engineer?  I don't remember how these work.

@@ -100,6 +100,13 @@
 (define (voltage-divider volts-in r1-Ω r2-Ω)
   (exact->inexact (* volts-in (/ r2-Ω (+ r1-Ω r2-Ω)))))
 
+;; Resistor Power Voltage Capacity
+;; Given a the resistance and power rating (in watts) of a resistor, return
+;; the voltage required to meet the power rating (i.e. how much voltage
+;; does it take to fry this 1/8 watt resistor?).
+(define (resistor-voltage-limit Ω watts)
+  (sqrt (* Ω watts)))
+
 ;;; --------- Non-Exported Functions ---------
 
 ;;; Add the reciprocal of n to total
