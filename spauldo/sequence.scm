@@ -4,6 +4,16 @@
   #:use-module (ice-9 optargs)
   #:export (<mseq> make-mseq mseq-ref))
 
+;;; --------------------------------------------------------------------------
+;;;
+;;; NOTE:
+;;;
+;;; I'm not even sure if the code below works.  There is a much simpler non-OO
+;;; memoization function available in the file memoization.scm in this
+;;; directory that I have tested.
+;;;
+;;; --------------------------------------------------------------------------
+
 ;;; THIS IS NOT THREAD SAFE!
 ;;; This uses VLists, which are not thread safe.  TODO: wrap vlist-cons in
 ;;; a mutex or something.
@@ -17,17 +27,17 @@
   ;; We keep track of the length here to speed things up.  Don't change this
   ;; value in user code!  Imagine it's private, if such a thing existed.
   (mseq-memoized-up-to #:init-value -1
-                         #:getter mseq-get-memoized-up-to
-                         #:setter mseq-set-memoized-up-to!)
+		       #:getter mseq-get-memoized-up-to
+		       #:setter mseq-set-memoized-up-to!)
   ;; The function to memoize
   (mseq-func #:init-keyword #:func
-                  #:getter mseq-get-func)
+	     #:getter mseq-get-func)
   ;; Is the function recursive?
   (mseq-recursive #:init-keyword #:recursive
                   #:getter mseq-recursive?)
   ;; The starting point of the sequence (must be >= 0)
   (mseq-start #:init-value 0 #:init-keyword #:start
-                   #:getter mseq-start)
+	      #:getter mseq-start)
   ;; Our VList
   (mseq-memoized-values #:init-value vlist-null))
 

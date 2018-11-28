@@ -333,6 +333,37 @@
      - rc-charge-charge
      - rc-discharge-charge
 
+**** memoization
+
+     Memoization of functions.  I have tested this, and it does work.
+
+     Guile has built-in memoization functionality, but it's not documented as far
+     as I can tell.  So instead, we can use the function make-memoized to create
+     memoized versions of almost any function.
+
+     There are some caveats:
+
+     1. The function shouldn't have side effects.  We could still memoize the
+	return values just fine, but side effects would not occur after the
+	first time the function was called.
+
+     2. The function should always return the same value for the same arguments.
+	This pretty much goes without saying.
+
+     3. The arguments to the function should be comparable via eq?.  Numbers and
+	symbols are both comparable via eq?.
+
+     4. The function should not return any pairs (i.e. anything that pair? would
+	return #t for).  That includes lists.
+
+     I may still make some modifications to remove caveat #4 (basically, instead
+     of storing values, I could store closures that return those values).  At
+     this point though, it's unnecessary.
+
+     Note that for simple functions, it would probably be much more efficient
+     to just call the function.  This is mostly useful for functions that
+     take a lot of calculation.
+
 **** primes
 
      Functions related to prime numbers.
