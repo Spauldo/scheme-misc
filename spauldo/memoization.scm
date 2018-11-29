@@ -5,7 +5,7 @@
 ;; The function should always use arguments that can be compared with eq?,
 ;; such as numbers or symbols, and should not return lists.
 (define (make-memoized fn)
-  (let ((db '())            ; An tree of nested alists, using arguments as keys
+  (let ((db '())            ; A tree of nested alists, using arguments as keys
 	(lookup-success #f) ; Did we find our value?
 	(return-val #f))    ; Value to return
 
